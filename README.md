@@ -1,4 +1,4 @@
-# Linux Shell Simulation {style=text-align:center}
+# Linux Shell Simulation 
 
 The following Program myshell.c is a simple version of linux bash shell made by using the c language. It has been capable of running the listed set of functions below.
 
@@ -12,16 +12,16 @@ The following Program myshell.c is a simple version of linux bash shell made by 
 - This function formats the command line input given by the user into a array of strings we can say which is passed to the Unix System calls for execution of the command. Also returns the number of tokens which are present. Mainly uses strtok function in C.
 It can handle the input such as :: mkdir "Operating System" in case the user wants to enter a string as an input with a space in it.
 
-### 1.) SET - 1 Functions -
+## 1.) SET - 1 Functions -
+<br>
 
-
-##### a.) The internal shell command "exit" which terminates the shell.  
+#### a.) The internal shell command "exit" which terminates the shell.  
 This has been handled in while loop in which if user inputs exit or quit and kill all the remaining background or foreground process at the instant.
 
     	1. Concepts: shell commands, exiting the shell
     	2. System calls: exit(), kill()
 
-##### b.)  A command with no arguments.
+#### b.)  A command with no arguments.
 This has been handles in my shell and it gives different types ooutput if the system calls is not been executed perfectly using different error status codes like 0 , 255 , etc.
 fork() is used to make a child process      	[ return -1 if noexecuted successfully]
 execvp() is used to execute the command line    [ return -1 if noexecuted successfully]
@@ -34,7 +34,7 @@ waitpid() is used to make parent wait for the child process to end and then star
 
 Handles error if thrown by any of the 3.
 
-##### c.) **A command with arguments.**
+#### c.) **A command with arguments.**
 This has been handled in my shell and it gives different types output if the system calls is not been executed perfectly using different error status codes like 0 , 255 , etc.
 fork() is used to make a child process
 execvp() is used to execute the command line
@@ -45,13 +45,13 @@ waitpid() is used to make parent wait for the child process to enand then start 
 
 Handles error if thrown by any of the 3.
 
-##### d.) A command, with or without arguments, executed in the background using &.
+#### d.) A command, with or without arguments, executed in the background using &.
 My shell executes the command and return immediately, not block it until the command finishes. it also prints the pid of the process when command gets executed with its number [which bg process it is] . Doesn't Support Background Processes with input output redirection and piping. Supports simple Unix Commands with argument and without arguments with &.
 
-### 2.) SET - 2 Functions -
+## 2.) SET - 2 Functions -
+<br>
 
-
-##### a.) A command, with or without arguments, whose output is redirected to a file.
+#### a.) A command, with or without arguments, whose output is redirected to a file.
 it uses fork() to make a child process.
 it opens the output file in write mode.
 The C library function FILE *freopen(const char *filename, const char *mode, FILE *stream) associates a new filename with the given open stream and at the same time closes the old file in the stream. Here we set the stream a STDOUT to redirect output of the command execution to file.
@@ -64,7 +64,7 @@ execvp() is used to execute the command line whose output is written into file
     	Handles error if file has not opened and also handles previous errors like fork() and exec()..
     	Parent waits till child ends the process.
 
-##### b.) A command, with or without arguments, whose input is redirected from aile.
+#### b.) A command, with or without arguments, whose input is redirected from aile.
 it uses fork() to make a child process.
 it opens the input file in read mode.
 The C library function FILE *freopen(const char *filename, conschar *mode, FILE *stream) associates a new filename with the giveopen stream and at the same time closes the old file in the stream. Here we set the stream a STDIN to redirect input to the command execution.
@@ -80,7 +80,7 @@ Parent waits till child ends the process.
 ###### The shell also supports multiple input and output redirections.
 	Eg. > ./some_program 2 < inputFile > outputFile
 
-##### c.) A command, with or without arguments, whose output is piped to the input of another  command.
+#### c.) A command, with or without arguments, whose output is piped to the input of another  command.
 This shell supports only one pipe for communication between the processes but supports input and output direction with hand in hand piping. This takes the output of the first command and makes it thinput to the second command.
 It uses file descriptor and pipe() function for communication. fd[0] will be the fd(file descriptor) for the read end of pipe. fd[1] will be the fd for the write end of pipe.
 Returns : 0 on Success. -1 on error.
@@ -95,14 +95,14 @@ Parent waits till left and right children of the pipe ends the process.
 
 One level of Pipe is implemented here with supported input and output direction.
 
-### 3.) SET - 3 Functions -
+## 3.) SET - 3 Functions -
+<br>
 
-
-##### a.) Limited shell environment variables: PATH, HISTFILE, HOME.
+#### a.) Limited shell environment variables: PATH, HISTFILE, HOME.
 
 Here, 1.PATH: contains the list of directories to be searched when commands are executed. 2. HISTFILE: contains the name of the file that contains a list of all inputs to the shell. The default will be the file .user_history in the directory in which the shell is initialized, i.e. the current working directory when the shell program is executed. 3. HOME - the default home directory will be the directory in which the shell is initialized, i.e. the current working directory when the shell program is executed.
 
-##### b.) The history builtin command :
+#### b.) The history builtin command :
 
 history prints out all of the input to the shell reading from the file by reading from the .user_history whose file path is given into fopen() which i sin the HOME directory..
 (space) number (2 spaces) command line is the format.
@@ -110,7 +110,7 @@ supports history n
 supports history Too many arguments
 supports history -c - by clearing .user_history by opening it write mode and closing afterwords
 
-##### c.) The cd builtin Command :
+#### c.) The cd builtin Command :
 
 The supported functions are > cd gives present working directory
 uses chdir() to change directory. > cd path > cd .. changes to parent directory
@@ -126,7 +126,7 @@ uses chdir() to change directory. > cd path > cd .. changes to parent directory
 
 ###### Supports > cd too many arguments
 
-##### d.) The export builtin Command :
+#### d.) The export builtin Command :
 
 The shell give the export attribute to the variables corresponding
 to the specified names, which shall cause them to be in the
