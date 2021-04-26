@@ -23,8 +23,8 @@ This has been handled in while loop in which if user inputs exit or quit and kil
 
 #### b.)  A command with no arguments.
 This has been handles in my shell and it gives different types ooutput if the system calls is not been executed perfectly using different error status codes like 0 , 255 , etc.
-fork() is used to make a child process      	[ return -1 if noexecuted successfully]
-execvp() is used to execute the command line    [ return -1 if noexecuted successfully]
+fork() is used to make a child process      	[ return -1 if not executed successfully]
+execvp() is used to execute the command line    [ return -1 if not executed successfully]
 waitpid() is used to make parent wait for the child process to end and then start again.
 
     	1. Concepts: Forking a child process, waiting for it to complete,
@@ -64,7 +64,7 @@ execvp() is used to execute the command line whose output is written into file
     	Handles error if file has not opened and also handles previous errors like fork() and exec()..
     	Parent waits till child ends the process.
 
-#### b.) A command, with or without arguments, whose input is redirected from aile.
+#### b.) A command, with or without arguments, whose input is redirected from file.
 it uses fork() to make a child process.
 it opens the input file in read mode.
 The C library function FILE *freopen(const char *filename, conschar *mode, FILE *stream) associates a new filename with the giveopen stream and at the same time closes the old file in the stream. Here we set the stream a STDIN to redirect input to the command execution.
@@ -80,7 +80,7 @@ Parent waits till child ends the process.
 ###### The shell also supports multiple input and output redirections.
 	Eg. > ./some_program 2 < inputFile > outputFile
 
-#### c.) A command, with or without arguments, whose output is piped to the input of another  command.
+#### c.) A command, with or without arguments, whose output is piped to the input of another command.
 This shell supports only one pipe for communication between the processes but supports input and output direction with hand in hand piping. This takes the output of the first command and makes it thinput to the second command.
 It uses file descriptor and pipe() function for communication. fd[0] will be the fd(file descriptor) for the read end of pipe. fd[1] will be the fd for the write end of pipe.
 Returns : 0 on Success. -1 on error.
