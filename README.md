@@ -1,6 +1,8 @@
-# Linux Shell Simulation 
+<h1 style="text-align:center"> Linux Shell Simulation </h1>
 
 The following Program myshell.c is a simple version of linux bash shell made by using the c language. It has been capable of running the listed set of functions below.
+
+<br>
 <br>
 
 ##  Instructions to Run the Program : 
@@ -8,8 +10,8 @@ The following Program myshell.c is a simple version of linux bash shell made by 
 2. Run Following commands to make and run the Executable file: 
 <br>
 
-		make
-		./myshell
+	make
+	./myshell
 
 3. After Exit, run the following command to clean the executable file:
 
