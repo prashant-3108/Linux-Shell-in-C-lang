@@ -63,8 +63,7 @@ execvp() is used to execute the command line whose output is written into file
     	2. Concepts: File operations, output redirection
     	3. System calls: freopen() , dup()
 
-    	Handles error if file has not opened and also handles previous errors like fork() and exec()..
-    	Parent waits till child ends the process.
+Handles error if file has not opened and also handles previous errors like fork() and exec().. Parent waits till child ends the process.
 
 #### b.) A command, with or without arguments, whose input is redirected from file.
 it uses fork() to make a child process.
