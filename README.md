@@ -3,7 +3,6 @@
 The following Program myshell.c is a simple version of linux bash shell made by using the c language. It has been capable of running the listed set of functions below.
 
 <br>
-<br>
 
 ##  Instructions to Run the Program : 
 1. Open Linux Terminal in this Repository.	[Hold Right Mouse + E]
@@ -14,8 +13,9 @@ The following Program myshell.c is a simple version of linux bash shell made by 
 	./myshell
 
 3. After Exit, run the following command to clean the executable file:
-
-		make clean
+<br>
+	
+	make clean
 
 <br>
 <br>
