@@ -13,6 +13,7 @@ The following Program myshell.c is a simple version of linux bash shell made by 
 It can handle the input such as :: mkdir "Operating System" in case the user wants to enter a string as an input with a space in it.
 
 <br>
+
 ## 1.) SET - 1 Functions -
 
 #### a.) The internal shell command "exit" which terminates the shell.  
@@ -49,6 +50,7 @@ Handles error if thrown by any of the 3.
 My shell executes the command and return immediately, not block it until the command finishes. it also prints the pid of the process when command gets executed with its number [which bg process it is] . Doesn't Support Background Processes with input output redirection and piping. Supports simple Unix Commands with argument and without arguments with &.
 
 <br>
+
 ## 2.) SET - 2 Functions -
 
 #### a.) A command, with or without arguments, whose output is redirected to a file.
@@ -96,6 +98,7 @@ Parent waits till left and right children of the pipe ends the process.
 One level of Pipe is implemented here with supported input and output direction.
 
 <br>
+
 ## 3.) SET - 3 Functions -
 
 #### a.) Limited shell environment variables: PATH, HISTFILE, HOME.
