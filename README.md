@@ -113,7 +113,7 @@ Parent waits till left and right children of the pipe ends the process.
     	2. Concepts: Pipes, synchronous operation
     	3. System calls: pipe()
 
-One level of Pipe is implemented here with supported input and output direction.
+###### One level of Pipe is implemented here with supported input and output direction.
 
 <br>
 
